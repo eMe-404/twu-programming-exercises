@@ -4,9 +4,14 @@ public class Main {
 
     public static void main(String[] args) {
         int n = 3;
-        for (int i = 1; i <= n; i++) {
+        String name = "yaer";
+
+        for (int i = 1; i < n; i++) {
             printOneLine(n, i);
         }
+
+        System.out.println(name);
+
         for (int i = n - 1; i > 0; i--) {
             printOneLine(n, i);
         }
