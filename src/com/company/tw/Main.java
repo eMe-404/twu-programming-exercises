@@ -5,11 +5,18 @@ public class Main {
     public static void main(String[] args) {
         int n = 3;
         for (int i = 1; i <= n; i++) {
-            final int asteriskNum = i * 2 - 1;
-            final int backspaceNum = n - i;
-            System.out.println(generateOneLine(asteriskNum, backspaceNum));
+            printOneLine(n, i);
+        }
+        for (int i = n - 1; i > 0; i--) {
+            printOneLine(n, i);
         }
 
+    }
+
+    private static void printOneLine(int n, int i) {
+        final int asteriskNum = i * 2 - 1;
+        final int backspaceNum = n - i;
+        System.out.println(generateOneLine(asteriskNum, backspaceNum));
     }
 
     private static StringBuilder generateOneLine(int asteriskNum, int backspaceNum) {
