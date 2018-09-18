@@ -1,27 +1,30 @@
 package com.company.tw;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
-        int num = 100;
-        fizzBuzz(num);
+        int num = 30;
+        List<Integer> factorList = generate(num);
+        System.out.println(factorList);
     }
 
-    private static void fizzBuzz(int num) {
-        for (int i = 1; i <= num; i++) {
-            StringBuilder outputStr = new StringBuilder();
-            if (i % 3 == 0) {
-                outputStr.append("Fizz");
-            }
-            if (i % 5 == 0) {
-                outputStr.append("Buzz");
-            }
-            if (outputStr.length() == 0) {
-                outputStr.append(i);
-            }
+    private static List<Integer> generate(int num) {
 
-            System.out.println(outputStr);
+        List<Integer> factorList = new ArrayList<>();
 
+        int factor = 2;
+        while (factor <= num) {
+            if (num % factor == 0) {
+                num /= factor;
+                factorList.add(factor);
+            } else {
+                factor++;
+            }
         }
+        return factorList;
     }
+
 }
